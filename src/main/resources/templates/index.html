@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <script type="text/javascript" th:src="@{/js/index.js}"></script>
+</head>
+<body>
+    <h1>Index Page</h1>
+    <h2>Range Request</h2>
+    <ul>
+        <li th:each="video : ${videoList}">
+            <a th:href="@{'/range-requests/' + ${video.id}}" th:text="${video.filePath}"></a>
+        </li>
+    </ul>
+</body>
+</html>
